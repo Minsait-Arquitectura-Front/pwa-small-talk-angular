@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 export interface PokemonInList {
   name: string;
@@ -17,7 +17,13 @@ export class PokemonListComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   public ngOnInit() {
-    this.http.get<any>('https://pokeapi.co/api/v2/pokemon?offset=10&limit=10')
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      }),
+    };
+    this.http.get<any>('https://pokeapi.co/api/v2/pokemon?offset=10&limit=10', httpOptions)
       .subscribe(response => {
         this.pokemons = response.results;
       });
