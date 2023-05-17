@@ -22,13 +22,7 @@ export class PokemonItemComponent implements OnInit {
 
   public ngOnInit() {
     if (this.pokemon?.url) {
-      const httpOptions = {
-        headers: new HttpHeaders({
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-        }),
-      };
-      this.http.get<any>(this.pokemon.url, httpOptions)
+      this.http.get<any>(this.pokemon.url)
         .subscribe(pokemonData => {
           this.pokemonData = {
             name: pokemonData.name,

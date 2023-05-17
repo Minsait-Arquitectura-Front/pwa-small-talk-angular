@@ -13,3 +13,7 @@ body {
   padding: 10px;
   text-align: center;
 }
+
+body * {
+  box-sizing: border-box;
+}

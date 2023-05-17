@@ -13,19 +13,38 @@ export interface PokemonInList {
 })
 export class PokemonListComponent implements OnInit {
   public pokemons: PokemonInList[] = [];
+  public errorMessage: string = '';
+
+  private readonly pageSize: number = 10;
+  private offset: number = 0;
 
   constructor(private http: HttpClient) { }
 
   public ngOnInit() {
-    const httpOptions = {
-      headers: new HttpHeaders({
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-      }),
-    };
-    this.http.get<any>('https://pokeapi.co/api/v2/pokemon?offset=10&limit=10', httpOptions)
-      .subscribe(response => {
-        this.pokemons = response.results;
-      });
+    this.loadPokemons();
+  }
+
+  private loadPokemons() {
+    const apiUrl = `https://pokeapi.co/api/v2/pokemon?offset=${this.offset}&limit=${this.pageSize}`;
+    this.http.get<any>(apiUrl).subscribe({
+      next: (response) => {
+        console.log(response);
+        this.pokemons = [...this.pokemons, ...response.results]
+      },
+      error: (e) => {
+        this.errorMessage = 'Error retrieving Pokémon data.';
+        console.error(e);
+      },
+      complete: () => console.info('complete')
+    });
+  }
+
+  public nextPage() {
+    this.offset += this.pageSize;
+    this.loadPokemons();
+  }
+
+  public reload() {
+    window.location.reload()
   }
 }
