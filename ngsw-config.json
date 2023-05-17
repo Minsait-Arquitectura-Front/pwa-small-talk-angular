@@ -12,28 +12,9 @@
           "/index.html",
           "/manifest.webmanifest",
           "/*.css",
-          "/*.js"
-        ]
-      }
-    },
-    {
-      "name": "assets",
-      "installMode": "lazy",
-      "updateMode": "prefetch",
-      "resources": {
-        "files": [
+          "/*.js",
           "/assets/**",
           "/*.(svg|cur|jpg|jpeg|png|apng|webp|avif|gif|otf|ttf|woff|woff2)"
-        ]
-      }
-    },
-    {
-      "name": "api",
-      "installMode": "prefetch",
-      "resources": {
-        "urls": [
-          "https://pokeapi.co/**",
-          "https://raw.githubusercontent.com/**"
         ]
       }
     }
@@ -42,7 +23,8 @@
     {
       "name": "POKEMON API",
       "urls": [
-        "https://pokeapi.co/**"
+        "https://pokeapi.co/**",
+        "https://raw.githubusercontent.com/**"
       ],
       "version": 1,
       "cacheConfig": {
