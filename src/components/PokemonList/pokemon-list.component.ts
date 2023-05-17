@@ -17,7 +17,7 @@ export class PokemonListComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   public ngOnInit() {
-    this.http.get<any>('https://pokeapi.co/api/v2/pokemon?limit=10')
+    this.http.get<any>('https://pokeapi.co/api/v2/pokemon?offset=10&limit=10')
       .subscribe(response => {
         this.pokemons = response.results;
       });
