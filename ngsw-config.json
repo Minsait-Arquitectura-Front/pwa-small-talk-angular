@@ -23,8 +23,7 @@
       "resources": {
         "files": [
           "/assets/**",
-          "/*.(svg|cur|jpg|jpeg|png|apng|webp|avif|gif|otf|ttf|woff|woff2)",
-          "https://raw.githubusercontent.com/**"
+          "/*.(svg|cur|jpg|jpeg|png|apng|webp|avif|gif|otf|ttf|woff|woff2)"
         ]
       }
     },
@@ -33,7 +32,8 @@
       "installMode": "prefetch",
       "resources": {
         "urls": [
-          "https://pokeapi.co/**"
+          "https://pokeapi.co/**",
+          "https://raw.githubusercontent.com/**"
         ]
       }
     }
