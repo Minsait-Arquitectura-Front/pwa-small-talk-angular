@@ -25,6 +25,32 @@
           "/*.(svg|cur|jpg|jpeg|png|apng|webp|avif|gif|otf|ttf|woff|woff2)"
         ]
       }
+    },
+    {
+      "name": "api",
+      "installMode": "prefetch",
+      "resources": {
+        "urls": [
+          "https://pokeapi.co/**"
+        ]
+      }
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "POKEMON API",
+      "urls": [
+        "https://pokeapi.co/**"
+      ],
+      "version": 1,
+      "cacheConfig": {
+        "maxSize": 10000,
+        "maxAge": "1d",
+        "strategy": "freshness"
+      },
+      "cacheQueryOptions": {
+        "ignoreSearch": false
+      }
     }
   ]
 }
