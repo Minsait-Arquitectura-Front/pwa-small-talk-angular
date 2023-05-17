@@ -1,8 +1,8 @@
 {
-  "name": "pwa-small-talk-angular",
-  "short_name": "pwa-small-talk-angular",
-  "theme_color": "#1976d2",
-  "background_color": "#fafafa",
+  "name": "Pokedex!",
+  "short_name": "Pokedex!",
+  "theme_color": "#EE1515",
+  "background_color": "#FFFFFF",
   "display": "standalone",
   "scope": "./",
   "start_url": "./",
