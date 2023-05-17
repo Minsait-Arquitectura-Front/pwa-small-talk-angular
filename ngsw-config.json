@@ -37,22 +37,5 @@
         ]
       }
     }
-  ],
-  "dataGroups": [
-    {
-      "name": "POKEMON API",
-      "urls": [
-        "https://pokeapi.co/**"
-      ],
-      "version": 1,
-      "cacheConfig": {
-        "maxSize": 10000,
-        "maxAge": "1d",
-        "strategy": "freshness"
-      },
-      "cacheQueryOptions": {
-        "ignoreSearch": false
-      }
-    }
   ]
 }
